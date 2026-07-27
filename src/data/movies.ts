@@ -1,5 +1,8 @@
 import type { Movie } from "../types/movie";
 
+const posterUrl = (fileName: string) =>
+  `${import.meta.env.BASE_URL}posters/${fileName}`;
+
 export const movies: Movie[] = [
   {
     id: "captain-america-first-avenger",
@@ -11,7 +14,7 @@ export const movies: Movie[] = [
     releaseYear: 2011,
     phase: "Phase One",
     saga: "Infinity Saga",
-    poster: "/posters/01-captain-america.webp",
+    poster: posterUrl("01-captain-america.webp"),
     synopsis:
       "史蒂夫·罗杰斯接受超级士兵实验，在二战末期对抗九头蛇，并成为被时代冻结的英雄。",
     events: ["超级士兵计划成功", "宇宙魔方落入盟军之手", "史蒂夫沉睡于北冰洋"],
@@ -28,7 +31,7 @@ export const movies: Movie[] = [
     releaseYear: 2019,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/02-captain-marvel.webp",
+    poster: posterUrl("02-captain-marvel.webp"),
     synopsis:
       "卡罗尔·丹弗斯重返地球寻找身世真相，并让年轻的尼克·弗瑞第一次直面宇宙文明。",
     events: ["卡罗尔恢复记忆", "斯克鲁人真相揭晓", "复仇者计划获得名字"],
@@ -45,7 +48,7 @@ export const movies: Movie[] = [
     releaseYear: 2008,
     phase: "Phase One",
     saga: "Infinity Saga",
-    poster: "/posters/03-iron-man.webp",
+    poster: posterUrl("03-iron-man.webp"),
     synopsis:
       "托尼·斯塔克在囚禁中制造装甲逃生，回归后终止武器生意并公开钢铁侠身份。",
     events: ["方舟反应炉诞生", "马克装甲首次实战", "托尼公开英雄身份"],
@@ -62,7 +65,7 @@ export const movies: Movie[] = [
     releaseYear: 2010,
     phase: "Phase One",
     saga: "Infinity Saga",
-    poster: "/posters/04-iron-man-2.webp",
+    poster: posterUrl("04-iron-man-2.webp"),
     synopsis:
       "托尼面对钯中毒、政府压力与复仇者伊凡·万科，战争机器也在危机中正式成形。",
     events: ["新元素取代钯核心", "战争机器投入行动", "神盾局评估托尼"],
@@ -79,7 +82,7 @@ export const movies: Movie[] = [
     releaseYear: 2011,
     phase: "Phase One",
     saga: "Infinity Saga",
-    poster: "/posters/05-thor.webp",
+    poster: posterUrl("05-thor.webp"),
     synopsis:
       "傲慢的索尔被放逐到地球，在失去神力后理解责任，并阻止洛基摧毁约顿海姆。",
     events: ["索尔被放逐", "彩虹桥受损", "洛基坠入宇宙裂隙"],
@@ -96,7 +99,7 @@ export const movies: Movie[] = [
     releaseYear: 2012,
     phase: "Phase One",
     saga: "Infinity Saga",
-    poster: "/posters/06-avengers.webp",
+    poster: posterUrl("06-avengers.webp"),
     synopsis:
       "洛基借宇宙魔方打开传送门，来自不同世界的英雄第一次集结，在纽约组成复仇者联盟。",
     events: ["宇宙魔方开启虫洞", "纽约之战爆发", "复仇者联盟正式集结"],
@@ -113,7 +116,7 @@ export const movies: Movie[] = [
     releaseYear: 2013,
     phase: "Phase Two",
     saga: "Infinity Saga",
-    poster: "/posters/07-iron-man-3.webp",
+    poster: posterUrl("07-iron-man-3.webp"),
     synopsis:
       "纽约之战后，托尼在创伤和失眠中面对绝境病毒危机，重新思考装甲与自我的关系。",
     events: ["绝境病毒危机", "钢铁军团坠落", "托尼移除胸口弹片"],
@@ -130,7 +133,7 @@ export const movies: Movie[] = [
     releaseYear: 2013,
     phase: "Phase Two",
     saga: "Infinity Saga",
-    poster: "/posters/08-thor-dark-world.webp",
+    poster: posterUrl("08-thor-dark-world.webp"),
     synopsis:
       "九界汇聚引来黑暗精灵，索尔与洛基短暂联手，阻止以太粒子吞噬现实。",
     events: ["以太寄宿简·福斯特", "弗丽嘉牺牲", "现实宝石交由收藏家"],
@@ -147,7 +150,7 @@ export const movies: Movie[] = [
     releaseYear: 2014,
     phase: "Phase Two",
     saga: "Infinity Saga",
-    poster: "/posters/09-winter-soldier.webp",
+    poster: posterUrl("09-winter-soldier.webp"),
     synopsis:
       "史蒂夫发现九头蛇早已渗透神盾局，并在追捕中认出被洗脑的旧友巴基。",
     events: ["神盾局体系瓦解", "洞察计划被阻止", "巴基开始找回记忆"],
@@ -164,7 +167,7 @@ export const movies: Movie[] = [
     releaseYear: 2014,
     phase: "Phase Two",
     saga: "Infinity Saga",
-    poster: "/posters/10-guardians-galaxy.webp",
+    poster: posterUrl("10-guardians-galaxy.webp"),
     synopsis:
       "彼得·奎尔与一群宇宙边缘人物争夺力量宝石，最终选择共同守护山达尔。",
     events: ["护卫队在监狱结盟", "力量宝石现身", "山达尔免于毁灭"],
@@ -181,7 +184,7 @@ export const movies: Movie[] = [
     releaseYear: 2015,
     phase: "Phase Two",
     saga: "Infinity Saga",
-    poster: "/posters/11-age-of-ultron.webp",
+    poster: posterUrl("11-age-of-ultron.webp"),
     synopsis:
       "托尼试图建立全球防御系统，却催生奥创；复仇者在索科维亚阻止灭绝计划。",
     events: ["奥创获得意识", "幻视诞生", "索科维亚之战改变世界秩序"],
@@ -198,7 +201,7 @@ export const movies: Movie[] = [
     releaseYear: 2015,
     phase: "Phase Two",
     saga: "Infinity Saga",
-    poster: "/posters/12-ant-man.webp",
+    poster: posterUrl("12-ant-man.webp"),
     synopsis:
       "斯科特·朗接受汉克·皮姆的训练，利用缩放技术阻止黄蜂战衣军事化。",
     events: ["斯科特成为蚁人", "首次进入量子领域", "皮姆粒子危机解除"],
@@ -215,7 +218,7 @@ export const movies: Movie[] = [
     releaseYear: 2016,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/13-civil-war.webp",
+    poster: posterUrl("13-civil-war.webp"),
     synopsis:
       "索科维亚协议撕裂复仇者联盟，史蒂夫与托尼因责任、友情与真相走向决裂。",
     events: ["索科维亚协议签署", "机场对决", "复仇者联盟正式分裂"],
@@ -232,7 +235,7 @@ export const movies: Movie[] = [
     releaseYear: 2018,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/14-black-panther.webp",
+    poster: posterUrl("14-black-panther.webp"),
     synopsis:
       "特查拉继承瓦坎达王位，在旧日秘密引发的挑战中决定让国家面向世界。",
     events: ["特查拉继位", "基尔蒙格发动挑战", "瓦坎达结束长期孤立"],
@@ -249,7 +252,7 @@ export const movies: Movie[] = [
     releaseYear: 2017,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/15-spider-man-homecoming.webp",
+    poster: posterUrl("15-spider-man-homecoming.webp"),
     synopsis:
       "彼得·帕克回到校园生活，在渴望加入复仇者的同时独自应对秃鹫的地下武器网络。",
     events: ["彼得拒绝加入复仇者", "秃鹫网络瓦解", "梅姨发现彼得身份"],
@@ -266,7 +269,7 @@ export const movies: Movie[] = [
     releaseYear: 2016,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/16-doctor-strange.webp",
+    poster: posterUrl("16-doctor-strange.webp"),
     synopsis:
       "外科医生史蒂芬·斯特兰奇失去双手能力后学习秘术，并以时间循环守护现实。",
     events: ["斯特兰奇进入卡玛泰姬", "时间宝石投入使用", "多玛姆被迫退去"],
@@ -283,7 +286,7 @@ export const movies: Movie[] = [
     releaseYear: 2017,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/17-thor-ragnarok.webp",
+    poster: posterUrl("17-thor-ragnarok.webp"),
     synopsis:
       "海拉归来迫使索尔在萨卡星集结同伴，以阿斯加德的毁灭换取人民生存。",
     events: ["奥丁离世", "诸神黄昏发生", "阿斯加德难民驶向地球"],
@@ -300,7 +303,7 @@ export const movies: Movie[] = [
     releaseYear: 2018,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/18-infinity-war.webp",
+    poster: posterUrl("18-infinity-war.webp"),
     synopsis:
       "灭霸跨越宇宙收集无限宝石，分散各地的英雄在瓦坎达与泰坦星同时迎战。",
     events: ["六颗无限宝石汇聚", "瓦坎达大战", "宇宙半数生命化为灰烬"],
@@ -317,7 +320,7 @@ export const movies: Movie[] = [
     releaseYear: 2019,
     phase: "Phase Three",
     saga: "Infinity Saga",
-    poster: "/posters/19-endgame.webp",
+    poster: posterUrl("19-endgame.webp"),
     synopsis:
       "幸存者在五年后利用量子领域穿越过去，重聚宝石并为整个宇宙发动最后一战。",
     events: ["时间劫持计划", "消失者回归", "托尼以响指终结战争"],
@@ -334,7 +337,7 @@ export const movies: Movie[] = [
     releaseYear: 2021,
     phase: "Phase Four",
     saga: "Multiverse Saga",
-    poster: "/posters/20-shang-chi.webp",
+    poster: posterUrl("20-shang-chi.webp"),
     synopsis:
       "尚气回到家族纷争的中心，在塔罗阻止噬魂怪，并继承拥有未知来源的十环。",
     events: ["塔罗之门开启", "文武牺牲", "十环发出神秘信号"],
@@ -351,7 +354,7 @@ export const movies: Movie[] = [
     releaseYear: 2021,
     phase: "Phase Four",
     saga: "Multiverse Saga",
-    poster: "/posters/21-no-way-home.webp",
+    poster: posterUrl("21-no-way-home.webp"),
     synopsis:
       "彼得请求奇异博士抹除身份曝光的后果，却意外撕开多元宇宙边界。",
     events: ["多元宇宙来客出现", "梅姨牺牲", "世界遗忘彼得·帕克"],
@@ -368,7 +371,7 @@ export const movies: Movie[] = [
     releaseYear: 2022,
     phase: "Phase Four",
     saga: "Multiverse Saga",
-    poster: "/posters/22-multiverse-of-madness.webp",
+    poster: posterUrl("22-multiverse-of-madness.webp"),
     synopsis:
       "斯特兰奇护送能够穿越宇宙的少女，在不同现实中面对被黑暗神书侵蚀的旺达。",
     events: ["美国小姐来到主宇宙", "光照会宇宙遭入侵", "黑暗神书被摧毁"],
@@ -385,7 +388,7 @@ export const movies: Movie[] = [
     releaseYear: 2022,
     phase: "Phase Four",
     saga: "Multiverse Saga",
-    poster: "/posters/23-wakanda-forever.webp",
+    poster: posterUrl("23-wakanda-forever.webp"),
     synopsis:
       "瓦坎达在失去国王后面对塔洛坎威胁，舒莉必须在复仇与延续之间作出选择。",
     events: ["特查拉离世", "塔洛坎现身", "舒莉成为新黑豹"],
@@ -402,7 +405,7 @@ export const movies: Movie[] = [
     releaseYear: 2023,
     phase: "Phase Five",
     saga: "Multiverse Saga",
-    poster: "/posters/24-guardians-vol-3.webp",
+    poster: posterUrl("24-guardians-vol-3.webp"),
     synopsis:
       "护卫队为拯救火箭深入至高进化的实验世界，在告别旧队伍前完成最后一次共同冒险。",
     events: ["火箭往事揭晓", "反地球覆灭", "银河护卫队完成交接"],
