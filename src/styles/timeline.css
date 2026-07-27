@@ -446,14 +446,14 @@
 
 .energy-line__current {
   fill: none;
-  stroke: rgb(154 216 170 / 58%);
+  stroke: url("#energyCoreGradient");
   stroke-linecap: round;
-  stroke-width: 0.86;
+  stroke-linejoin: round;
+  stroke-width: 0.82;
   vector-effect: non-scaling-stroke;
-  opacity: 0.34;
-  stroke-dasharray: 2 22 44 34;
-  stroke-dashoffset: 0;
-  animation: filament-flow 17s linear infinite;
+  opacity: 0.48;
+  filter: drop-shadow(0 0 2.5px rgb(105 184 139 / 38%));
+  animation: energy-core-breathe 6.4s ease-in-out infinite;
 }
 
 .energy-line__pulse {
@@ -698,9 +698,13 @@
   }
 }
 
-@keyframes filament-flow {
-  to {
-    stroke-dashoffset: -204;
+@keyframes energy-core-breathe {
+  0%,
+  100% {
+    opacity: 0.34;
+  }
+  50% {
+    opacity: 0.58;
   }
 }
 

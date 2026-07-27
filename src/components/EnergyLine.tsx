@@ -32,6 +32,14 @@ export function EnergyLine({
             <stop offset=".84" stopColor="#69a77f" stopOpacity=".7" />
             <stop offset="1" stopColor="#315a43" stopOpacity=".3" />
           </linearGradient>
+          <linearGradient id="energyCoreGradient" x1="0" x2="1">
+            <stop offset="0" stopColor="#315a43" stopOpacity=".12" />
+            <stop offset=".14" stopColor="#69b88b" stopOpacity=".34" />
+            <stop offset=".46" stopColor="#9ad8aa" stopOpacity=".62" />
+            <stop offset=".54" stopColor="#c6f4d2" stopOpacity=".74" />
+            <stop offset=".86" stopColor="#69b88b" stopOpacity=".32" />
+            <stop offset="1" stopColor="#315a43" stopOpacity=".1" />
+          </linearGradient>
           <filter id="softGlow" x="-10%" y="-100%" width="120%" height="300%">
             <feGaussianBlur stdDeviation="3.1" result="blur" />
             <feMerge>
