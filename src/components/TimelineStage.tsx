@@ -198,7 +198,12 @@ export function TimelineStage({
 
       <div className="timeline-stage__instruction" aria-hidden="true">
         <Icon name="drag" />
-        <span>滚轮、拖拽或方向键横向浏览</span>
+        <span className="timeline-stage__instruction-desktop">
+          滚轮、拖拽或方向键横向浏览
+        </span>
+        <span className="timeline-stage__instruction-mobile">
+          左右滑动浏览
+        </span>
       </div>
 
       <button

@@ -50,111 +50,118 @@ export function HeaderControls({
         </output>
       </div>
 
-      <div className="topbar__controls" aria-label="时间线筛选与排序">
-        <div className="sort-switch" aria-label="排序方式">
+      <div className="topbar__controls-shell">
+        <div className="topbar__controls" aria-label="时间线筛选与排序">
+          <div className="sort-switch" aria-label="排序方式">
+            <button
+              type="button"
+              className={sortMode === "story" ? "is-active" : ""}
+              aria-pressed={sortMode === "story"}
+              onClick={() => onSortChange("story")}
+            >
+              剧情时间
+            </button>
+            <button
+              type="button"
+              className={sortMode === "release" ? "is-active" : ""}
+              aria-pressed={sortMode === "release"}
+              onClick={() => onSortChange("release")}
+            >
+              上映时间
+            </button>
+          </div>
+
+          <label className="select-control select-control--watchlist">
+            <span>前置片单</span>
+            <select
+              value={filters.watchlist}
+              aria-label="按前置片单筛选"
+              onChange={(event) =>
+                onFiltersChange({
+                  ...filters,
+                  watchlist: event.target.value as WatchlistFilter,
+                })
+              }
+            >
+              <option value="all">全部片单</option>
+              {watchlistDefinitions.map((watchlist) => (
+                <option key={watchlist.id} value={watchlist.id}>
+                  {watchlist.label} · {watchlist.movieIds.length} 部
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="select-control">
+            <span>Saga</span>
+            <select
+              value={filters.saga}
+              aria-label="按 Saga 筛选"
+              onChange={(event) =>
+                onFiltersChange({
+                  ...filters,
+                  saga: event.target.value as "all" | Saga,
+                })
+              }
+            >
+              <option value="all">全部</option>
+              {sagaOptions.map((saga) => (
+                <option key={saga} value={saga}>
+                  {saga}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="select-control">
+            <span>Phase</span>
+            <select
+              value={filters.phase}
+              aria-label="按 Phase 筛选"
+              onChange={(event) =>
+                onFiltersChange({
+                  ...filters,
+                  phase: event.target.value as "all" | Phase,
+                })
+              }
+            >
+              <option value="all">全部</option>
+              {phaseOptions.map((phase) => (
+                <option key={phase} value={phase}>
+                  {phase}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="search-control">
+            <Icon name="search" />
+            <span className="sr-only">搜索电影</span>
+            <input
+              type="search"
+              value={filters.query}
+              placeholder="搜索电影或人物"
+              onChange={(event) =>
+                onFiltersChange({ ...filters, query: event.target.value })
+              }
+            />
+          </label>
+
           <button
             type="button"
-            className={sortMode === "story" ? "is-active" : ""}
-            aria-pressed={sortMode === "story"}
-            onClick={() => onSortChange("story")}
+            className="reset-control"
+            onClick={onReset}
+            disabled={!hasFilters}
           >
-            剧情时间
-          </button>
-          <button
-            type="button"
-            className={sortMode === "release" ? "is-active" : ""}
-            aria-pressed={sortMode === "release"}
-            onClick={() => onSortChange("release")}
-          >
-            上映时间
+            <Icon name="reset" />
+            <span>重置筛选</span>
           </button>
         </div>
 
-        <label className="select-control select-control--watchlist">
-          <span>前置片单</span>
-          <select
-            value={filters.watchlist}
-            aria-label="按前置片单筛选"
-            onChange={(event) =>
-              onFiltersChange({
-                ...filters,
-                watchlist: event.target.value as WatchlistFilter,
-              })
-            }
-          >
-            <option value="all">全部片单</option>
-            {watchlistDefinitions.map((watchlist) => (
-              <option key={watchlist.id} value={watchlist.id}>
-                {watchlist.label} · {watchlist.movieIds.length} 部
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label className="select-control">
-          <span>Saga</span>
-          <select
-            value={filters.saga}
-            aria-label="按 Saga 筛选"
-            onChange={(event) =>
-              onFiltersChange({
-                ...filters,
-                saga: event.target.value as "all" | Saga,
-              })
-            }
-          >
-            <option value="all">全部</option>
-            {sagaOptions.map((saga) => (
-              <option key={saga} value={saga}>
-                {saga}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label className="select-control">
-          <span>Phase</span>
-          <select
-            value={filters.phase}
-            aria-label="按 Phase 筛选"
-            onChange={(event) =>
-              onFiltersChange({
-                ...filters,
-                phase: event.target.value as "all" | Phase,
-              })
-            }
-          >
-            <option value="all">全部</option>
-            {phaseOptions.map((phase) => (
-              <option key={phase} value={phase}>
-                {phase}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label className="search-control">
-          <Icon name="search" />
-          <span className="sr-only">搜索电影</span>
-          <input
-            type="search"
-            value={filters.query}
-            placeholder="搜索电影或人物"
-            onChange={(event) =>
-              onFiltersChange({ ...filters, query: event.target.value })
-            }
-          />
-        </label>
-
-        <button
-          type="button"
-          className="reset-control"
-          onClick={onReset}
-          disabled={!hasFilters}
-        >
-          <Icon name="reset" />
-          <span>重置筛选</span>
-        </button>
+        <p className="topbar__scroll-hint" aria-hidden="true">
+          <span>左右滑动查看更多筛选</span>
+          <Icon name="arrow-right" />
+        </p>
       </div>
     </header>
   );
