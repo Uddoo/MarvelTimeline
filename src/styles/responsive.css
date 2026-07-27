@@ -117,28 +117,29 @@
   }
 
   .movie-node {
-    width: min(64vw, 230px);
-    min-height: 226px;
+    width: 132px;
+    min-height: 0;
   }
 
-  .movie-node__poster {
-    height: 134px;
+  .movie-node__body {
+    min-height: 80px;
+    padding: 8px 9px 7px;
   }
 
   .timeline-slot--above .movie-node {
-    bottom: calc(50% + 31px);
+    bottom: calc(50% + 12px);
   }
 
   .timeline-slot--below .movie-node {
-    top: calc(50% + 31px);
+    top: calc(50% + 12px);
   }
 
   .timeline-slot__connector {
-    height: 31px;
+    height: 12px;
   }
 
   .timeline-slot--above .timeline-slot__connector {
-    top: calc(50% - 31px);
+    top: calc(50% - 12px);
   }
 
   .timeline-stage__nav {
@@ -238,7 +239,7 @@
   }
 
   .detail-drawer__poster {
-    height: 190px;
+    width: min(190px, calc(100% - 40px));
   }
 }
 
@@ -252,12 +253,13 @@
   }
 
   .movie-node {
-    width: 164px;
-    min-height: 212px;
+    width: 154px;
+    min-height: 0;
   }
 
   .movie-node__poster {
-    height: 122px;
+    height: 116px;
+    aspect-ratio: auto;
   }
 
   .movie-node__body {
@@ -266,11 +268,19 @@
   }
 
   .timeline-slot--above .movie-node {
-    bottom: calc(50% + 29px);
+    bottom: calc(50% + 4px);
   }
 
   .timeline-slot--below .movie-node {
-    top: calc(50% + 29px);
+    top: calc(50% + 4px);
+  }
+
+  .timeline-slot__connector {
+    height: 4px;
+  }
+
+  .timeline-slot--above .timeline-slot__connector {
+    top: calc(50% - 4px);
   }
 }
 
