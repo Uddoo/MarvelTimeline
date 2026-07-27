@@ -35,7 +35,7 @@ jobs:
         run: npm run check
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base /MarvelTimeline/
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
