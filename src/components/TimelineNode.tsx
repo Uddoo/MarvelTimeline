@@ -40,7 +40,7 @@ export function TimelineNode({
         <span className="movie-node__poster">
           <img
             src={movie.poster}
-            alt={`${movie.titleZh}（${movie.title}）电影海报原创视觉`}
+            alt={`${movie.titleZh}（${movie.title}）电影院线版海报`}
             draggable="false"
           />
           <span className="movie-node__poster-sheen" aria-hidden="true" />

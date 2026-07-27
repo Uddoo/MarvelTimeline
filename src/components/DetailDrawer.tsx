@@ -55,7 +55,7 @@ export function DetailDrawer({
             <figure className="detail-drawer__poster">
               <img
                 src={movie.poster}
-                alt={`${movie.titleZh}（${movie.title}）大尺寸电影海报原创视觉`}
+                alt={`${movie.titleZh}（${movie.title}）大尺寸电影院线版海报`}
               />
               <figcaption>{movie.titleZh}</figcaption>
             </figure>
@@ -118,7 +118,7 @@ export function DetailDrawer({
                   >
                     <img
                       src={related.poster}
-                      alt={`${related.titleZh}电影海报原创视觉`}
+                      alt={`${related.titleZh}电影院线版海报`}
                     />
                     <span>
                       <strong>{related.titleZh}</strong>
