@@ -62,9 +62,6 @@ export default function App() {
         left: target,
         behavior: prefersReducedMotion() ? "auto" : "smooth",
       });
-      slot.querySelector<HTMLButtonElement>(".movie-node")?.focus({
-        preventScroll: true,
-      });
     });
   }, []);
 

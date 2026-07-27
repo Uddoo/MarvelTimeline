@@ -110,9 +110,19 @@ export function MiniTimeline({
   };
 
   const handleSliderKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    const keyActions: Partial<Record<string, number>> = {
+      ArrowDown: viewportLeft - 5,
+      ArrowLeft: viewportLeft - 5,
+      ArrowRight: viewportLeft + 5,
+      ArrowUp: viewportLeft + 5,
+      End: 100,
+      Home: 0,
+    };
+    const nextPosition = keyActions[event.key];
+    if (nextPosition === undefined) return;
+
     event.preventDefault();
-    seek(viewportLeft + (event.key === "ArrowLeft" ? -5 : 5));
+    seek(nextPosition);
   };
 
   return (

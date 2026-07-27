@@ -150,6 +150,7 @@ export function HeaderControls({
           <button
             type="button"
             className="reset-control"
+            aria-label="重置筛选"
             onClick={onReset}
             disabled={!hasFilters}
           >
