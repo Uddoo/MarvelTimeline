@@ -75,6 +75,10 @@
     min-width: 110px;
   }
 
+  .select-control--watchlist {
+    min-width: 146px;
+  }
+
   .search-control {
     width: 172px;
   }

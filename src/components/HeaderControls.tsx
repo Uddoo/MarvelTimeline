@@ -1,10 +1,12 @@
 import { Icon } from "./Icon";
 import { phaseOptions, sagaOptions } from "../data/movies";
+import { watchlistDefinitions } from "../data/watchlists";
 import type {
   Phase,
   Saga,
   SortMode,
   TimelineFilters,
+  WatchlistFilter,
 } from "../types/movie";
 
 interface HeaderControlsProps {
@@ -28,6 +30,7 @@ export function HeaderControls({
     sortMode !== "story" ||
     filters.saga !== "all" ||
     filters.phase !== "all" ||
+    filters.watchlist !== "all" ||
     filters.query.length > 0;
 
   return (
@@ -66,6 +69,27 @@ export function HeaderControls({
             上映时间
           </button>
         </div>
+
+        <label className="select-control select-control--watchlist">
+          <span>前置片单</span>
+          <select
+            value={filters.watchlist}
+            aria-label="按前置片单筛选"
+            onChange={(event) =>
+              onFiltersChange({
+                ...filters,
+                watchlist: event.target.value as WatchlistFilter,
+              })
+            }
+          >
+            <option value="all">全部片单</option>
+            {watchlistDefinitions.map((watchlist) => (
+              <option key={watchlist.id} value={watchlist.id}>
+                {watchlist.label} · {watchlist.movieIds.length} 部
+              </option>
+            ))}
+          </select>
+        </label>
 
         <label className="select-control">
           <span>Saga</span>

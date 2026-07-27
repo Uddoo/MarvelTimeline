@@ -9,6 +9,10 @@ export type Phase =
 
 export type SortMode = "story" | "release";
 
+export type WatchlistId = "brand-new-day" | "doomsday";
+
+export type WatchlistFilter = "all" | WatchlistId;
+
 export interface Movie {
   id: string;
   title: string;
@@ -29,6 +33,7 @@ export interface Movie {
 export interface TimelineFilters {
   saga: "all" | Saga;
   phase: "all" | Phase;
+  watchlist: WatchlistFilter;
   query: string;
 }
 

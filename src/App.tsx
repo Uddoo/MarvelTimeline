@@ -186,7 +186,7 @@ export default function App() {
           <div className="timeline-empty" role="status">
             <span aria-hidden="true" />
             <h2>此时间段没有匹配的电影</h2>
-            <p>调整 Saga、Phase 或搜索关键词后再试。</p>
+            <p>调整 Saga、Phase、前置片单或搜索关键词后再试。</p>
             <button type="button" onClick={reset}>
               重置筛选
             </button>

@@ -161,6 +161,10 @@
   background: rgb(4 8 6 / 42%);
 }
 
+.select-control--watchlist {
+  min-width: 154px;
+}
+
 .select-control > span {
   color: var(--color-gold);
   font-family: var(--font-display);
